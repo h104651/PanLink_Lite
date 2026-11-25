@@ -5,8 +5,8 @@ Build: hardened-20261125（版本號維持 2.0.0）
 1. 舊批次先按「停止新增」，讓已提交任務完成；不要按 PowerShell Ctrl+C。
 2. 備份原有 Tampermonkey 腳本及 GM 儲存資料（如果可匯出）。
 3. 開啟本包 panlink-lite-baidu-v2.0.0.txt，全選複製，完整取代原腳本，Ctrl+S。
-4. 在百度網盤重新整理一次。確認標題「2.0.0 · 完整修訂」。
-5. RPC 設定沿用 localhost:16800/jsonrpc、既有密碼、C:/AI-Shared/BaiduDownload。
+4. 在百度網盤重新整理一次。確認標題「百度下载管理器 · 2.0.0」。
+5. RPC 設定沿用 localhost:16800/jsonrpc、既有密碼及既有保存目錄（例如 C:/AI-Shared/BaiduDownload）。
 6. 初始並行 3、單檔連線 4；自適應、網頁自動恢復、來源 MD5 嚴格校驗均預設 false。
 7. 既有 v2 佇列可保留。首次執行會核對 OAuth 帳號；舊版未綁帳號的紀錄需人工確認。
 8. 先做實機小批次驗收，不要把模擬測試視為實機驗收。若需要回退，請先停止新增並保留 .aria2、備份隊列。
@@ -33,7 +33,9 @@ Build: hardened-20261125（版本號維持 2.0.0）
 驗證
 Node.js --check 已通過；64 項模擬 API/RPC/簡化 DOM 情境通過，詳見 test-results.txt。
 測試執行：node test-panlink-v2.0.0.cjs
-不是 64 個真實百度下載，也不是完整程式碼覆蓋率。此環境沒有 Windows PowerShell 或 Edge，未執行 PS 工具及真實瀏覽器/百度 SVIP 驗收。
+不是 64 個真實百度下載，也不是完整程式碼覆蓋率。開發環境未執行 Windows PowerShell 校驗工具及真實百度 SVIP 整合測試；2026-11-25 使用者另回報日常實機操作正常並接受新版 UI。未取得每項進階功能的實機測試紀錄。
 限制：Edge 關閉時只會繼續已提交給 Aria2 的下載，未提交工作要等網頁重開。自動恢復為選配，只對意外中斷且非手動停止/錯誤暫停的隊列。沒有本機背景管理器。OAuth 隱式授權失效需人工授權。RPC 服務本身若被關閉，需要重新啟動；管理器不能啟動本機程式。若 GID 遺失，不憑路徑猜測完成，需人工確認。來源 MD5 實機相容性及報告時點之後的檔案變更不由瀏覽器保證。
 
 基準：本對話 v2.0.0 / upstream PanLink Lite v1.8.1，AGPL-3.0-or-later；完整原始碼見 .user.js。
+
+版本凍結：2026-11-25，v2.0.0。詳見 CHANGELOG.md、RELEASE_NOTES.md 及 docs/v2.0.0-acceptance.md。
