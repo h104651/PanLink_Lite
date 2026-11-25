@@ -63,3 +63,5 @@ PASS UI filter selects matching task states
 PASS UI settings renders password controls
 PASS source path mismatch cannot be submitted
 64 test scenarios passed (mocked API/RPC and minimal DOM, no Windows browser execution)
+
+UI update (2.0.0, 2026-11-25): node --check passed; original 64 mocked scenarios rerun and passed. Local Chromium fixture (mocked userscript storage and lock; no external page/API): password fields, bordered inputs under simulated reset CSS, select/checkbox values saved, directory retained, expandable advanced actions, 390px viewport without horizontal panel overflow passed. Real Edge/Baidu integration not tested.
