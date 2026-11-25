@@ -1,0 +1,65 @@
+PASS signed URL preservation + token
+PASS directory recursion
+PASS persistent queue + duplicate + conflict
+PASS simulated three-slot scheduler + completion + global restore + reload
+PASS 403 hold + sanitized error
+PASS length mismatch hold
+PASS reconcile existing GID
+PASS ambiguous submission does not duplicate
+PASS account binding via uinfo
+PASS account mismatch rejects queue
+PASS changed token refuses bound operations
+PASS expired OAuth token blocks
+PASS signed URL with existing token unchanged
+PASS untrusted link rejected
+PASS changed source size rejected
+PASS changed source mtime rejected
+PASS source MD5 retained when well formed
+PASS malformed MD5 is not trusted
+PASS expired link deadline parsing
+PASS new job rejects traversal
+PASS Windows reserved basename rejected
+PASS root traversal and ADS rejected
+PASS persisted path tampering rejected
+PASS paused task does not consume scheduler slot
+PASS 403 cannot automatically retry
+PASS 429 cannot automatically retry
+PASS network timeout schedules bounded retry
+PASS retry budget exhaustion pauses
+PASS missing file can leave other jobs running
+PASS known expired 410 link schedules fresh URL
+PASS disk error does not spin retry
+PASS intentional cancel preserves separate terminal status
+PASS GID wrong local path pauses rather than adopts
+PASS RPC temporary tellStatus failure retains GID
+PASS explicit missing GID is uncertain not resubmitted
+PASS duplicate external destinations not adopted
+PASS matching external task adoption
+PASS temporary RPC outage during scheduler recovers
+PASS global option lease restored after simulated reload
+PASS external global option change is not overwritten
+PASS report account/root mismatch rejected
+PASS verification report marks size check
+PASS report cannot assert unmatched source hash
+PASS matching MD5 report marks hash verification
+PASS missing local file invalidates completed record
+PASS duplicate report keys rejected
+PASS page account mismatch blocks authorization
+PASS source path change blocked
+PASS RPC remote host rejected
+PASS RPC userinfo rejected
+PASS RPC without secret rejected
+PASS checksum opt-in passes MD5 to aria2
+PASS checksum off by default
+PASS checksum unavailable does not invent value
+PASS speed cap uses byte-per-second RPC option
+PASS adaptive raises concurrency after sustained baseline
+PASS adaptive backs off if gain below threshold
+PASS adaptive never increases on external tasks
+PASS adaptive cap enforced
+PASS recent speed sample buffer bounded
+PASS UI renders large queue with 100-row pagination
+PASS UI filter selects matching task states
+PASS UI settings renders password controls
+PASS source path mismatch cannot be submitted
+64 test scenarios passed (mocked API/RPC and minimal DOM, no Windows browser execution)
